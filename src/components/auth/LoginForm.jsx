@@ -28,15 +28,7 @@ const LoginForm = () => {
     setError("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/auth/login",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await login(formData);
 
       const user = response.data;
 
